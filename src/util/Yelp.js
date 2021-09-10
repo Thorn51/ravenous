@@ -9,24 +9,7 @@ export const Yelp = {
                 }
             })
             const data = await res.json()
-            if (data.business) {
-                data.business.map(business => {
-                    return {
-                        id: business.id,
-                        imageSrc: business.imageSrc,
-                        name: business.name,
-                        address: business.address,
-                        city: business.city,
-                        state: business.state,
-                        zipCode: business.zipCode,
-                        category: business.category,
-                        rating: business.rating,
-                        reviewCount: business.reviewCount
-                    }
-                })
-            } else {
-                throw new Error
-            }
+            return data
         } catch (err) {
             console.log(err)
         }
